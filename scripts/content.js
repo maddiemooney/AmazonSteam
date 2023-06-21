@@ -1,18 +1,7 @@
-// Copyright 2022 Google LLC
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//     https://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
+const _apikey = "";
+const _steamid = "";
 
-const article = document.querySelector('article');
+const article = document.querySelector('apex_desktop');
 
 // `document.querySelector` may return null if the selector doesn't match anything.
 if (article) {
@@ -36,6 +25,21 @@ if (article) {
   // Use the same styling as the publish information in an article's header
   badge.classList.add('color-secondary-text', 'type--caption');
   badge.textContent = `⏱️ ${readingTime} min read`;
+
+  // get recently played games from steam profile
+
+  const userAction = async () => {
+
+    const url = "http://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v0001/?key=" + _apikey + "&steamid=" + _steamid + "&format=json";
+
+    const response = await fetch(url);
+    const myJson = await response.json();
+    console.log(myJson);
+  }
+
+
+
+
 
   // Support for API reference docs
   const heading = article.querySelector('h1');
