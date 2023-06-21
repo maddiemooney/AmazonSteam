@@ -1,8 +1,8 @@
-const _apikey = "";
+const _apikey = STEAM_API_KEY.env;
 const _steamid = "";
 
 const article = document.querySelector('apex_desktop');
-
+console.log("This is your API Key Bitch" + _apikey)
 // `document.querySelector` may return null if the selector doesn't match anything.
 if (article) {
   const text = article.textContent;
