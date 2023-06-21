@@ -1,10 +1,18 @@
 {
     "manifest_version": 3,
     "name": "AmazonSteam",
-    "description": "you don't need that graphics card",
     "version": "1.0",
+    "description": "do u rly need that graphics card",
+    "content_scripts": [
+      {
+        "js": ["scripts/content.js"],
+        "matches": [
+          "https://developer.chrome.com/docs/extensions/*",
+          "https://developer.chrome.com/docs/webstore/*"
+        ]
+      }
+    ],
     "action": {
-      "default_popup": "hello.html",
-      "default_icon": "hello_extensions.png"
-    }
+        "default_popup": "hello.html"
+      }
   }
