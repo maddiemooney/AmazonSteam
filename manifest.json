@@ -7,11 +7,11 @@
       {
         "js": ["scripts/content.js"],
         "matches": [
-          "https://developer.chrome.com/docs/extensions/*",
-          "https://developer.chrome.com/docs/webstore/*"
+          "https://*/amazon.com/*"
         ]
       }
     ],
+    "host_permissions": ["https://api.steampowered.com/*"],
     "action": {
         "default_popup": "hello.html"
       }
