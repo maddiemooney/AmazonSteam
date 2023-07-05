@@ -1,16 +1,33 @@
-const _apikey = STEAM_API_KEY.env;
-const _steamid = "";
+const _apikey = "string";
+const _steamid = "123";
 
 console.log("This is your API Key Bitch" + _apikey);
 
-const url = "http://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v0001/?key=" + _apikey + "&steamid=" + _steamid + "&format=json";
+//get dom element of amazon page/¿¿¿?
+const b = document.querySelector("test")
+if (b){
+  console.log("we got it bitch");
+}
+
+
+
+const url = "https://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v0001/?key=" + _apikey + "&steamid=" + _steamid + "&format=json";
   
-fetch(url, {mode: 'no-cors'})
+fetch(url, {
+  method: 'GET',
+  mode: 'cors',
+  headers: {
+    'Content-Type': 'application/json'
+  }
+})
   .then(response => {
-    //handle response      
-    console.log(response);
+    response.json().then((data) => {
+      console.log(data.response.games); 
+    });
   })
   .catch(error => {
-    //handle error
+    console.log(error);
   });
+
+
 
